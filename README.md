@@ -44,14 +44,14 @@ logger('AuthGuard', 'User not found!', { type: 'danger' });
 logger('AuthGuard', 'User found!', { type: 'success' });
 logger('AuthGuard', 'User password will expire soon', { type: 'warn' });
 ```
-![Output](https://raw.githubusercontent.com/rodgerpaulo/js-pretty-logger/master/assets/log-styles.png)
+![output](https://raw.githubusercontent.com/rodgerpaulo/js-pretty-logger/master/assets/log-styles.PNG)
 
 ### Detailed time
 
 ```javascript
 logger('AuthGuard', 'User password will expire soon', { isDetailed: true });
 ```
-![Output](https://raw.githubusercontent.com/rodgerpaulo/js-pretty-logger/master/assets/log-detailed.png)
+![Output](https://raw.githubusercontent.com/rodgerpaulo/js-pretty-logger/master/assets/log-detailed.PNG)
 
 ## Pro-tip 💡
 
