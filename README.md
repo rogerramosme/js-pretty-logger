@@ -1,19 +1,12 @@
-# pretty-logger
-A beaultiful to read console message
+# js-pretty-logger
+A Simple beaultiful to read console logger
 
 
 ## Usage
-
-### Javascript
 ```javascript
-const consoleLogger = require('console-logger');
-consoleLogger.log('AuthGuard', 'Message to Log', { type: 'success' });
+const logger = require('console-logger');
+logger('AuthGuard', 'User login initialized', { type: 'info' });
 ```
 ```sh
-Output should be 'Boys'
-```
-### TypeScript
-```typescript
-import consoleLogger from 'console-logger';
-consoleLogger.log('AuthGuard', 'Message to Log', { type: 'success' });
+11:53:08 AuthGuard • Initialized
 ```
