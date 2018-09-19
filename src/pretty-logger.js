@@ -3,7 +3,6 @@ const logStyles = require('./lib/log-styles');
 const env = require('./enums/env');
 
 const isNode = env.isNode;
-
 let messages = [];
 
 const addLog = message => messages.push(message);
