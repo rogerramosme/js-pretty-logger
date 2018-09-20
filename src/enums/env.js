@@ -1,3 +1,3 @@
 module.exports = {
-    isNode: typeof module !== 'undefined'
+    isNode: typeof module === 'object' && typeof localStorage === 'undefined'
 }
