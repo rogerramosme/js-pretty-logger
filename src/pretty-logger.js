@@ -1,4 +1,5 @@
-const moment  = require('moment');
+const format = require('date-fns/format');
+const diff = require('date-fns/difference_in_milliseconds');
 const logStyles = require('./lib/log-styles');
 const env = require('./enums/env');
 
@@ -7,12 +8,10 @@ let messages = [];
 
 const addLog = message => messages.push(message);
 
-const getConsoleDate = isDetailed => {
+const getConsoleDate = (isDetailed = false) => {
+    const today = new Date();
 
-    const today = moment(new Date());
-    isDetailed = (isDetailed || false);
-
-    return (isDetailed ? today.format('MMMM Do YYYY @ h:mm:ss a') : today.format('h:mm:ss'));
+    return (isDetailed ? format(today, 'MMMM Do YYYY @ HH:mm:ss') : format(today, 'HH:mm:ss'));
 }
 
 const consoleMessage = (title, message, options) => {
@@ -26,9 +25,9 @@ const consoleMessage = (title, message, options) => {
         const lastMessage = messages[messagesLength - 1];
         if (lastMessage.title === title) {
 
-            lastMessageMiliseconds = moment.utc(moment(lastMessage.date).diff(new Date())).format('SSS');
+            lastMessageMiliseconds = diff(lastMessage.date, new Date());
             if (Number(lastMessageMiliseconds) < 2000) {
-                lastMessageMiliseconds = `${lastMessageMiliseconds}ms `;
+                lastMessageMiliseconds = (lastMessageMiliseconds > 0 ? `${lastMessageMiliseconds}ms ` : '');
             }
         }
     }
